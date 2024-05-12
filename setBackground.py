@@ -38,6 +38,6 @@ if __name__ == "__main__":
         print("Invalid argument. args: [light|dark]")
         sys.exit(1)
     dir_light = "/home/alireza/Downloads/background/wallpapers/light"
-    dir_dark = "/home/alireza/Downloads/background/allpapers/dark"
+    dir_dark = "/home/alireza/Downloads/background/wallpapers/dark"
     dir = dir_light if mode == "light" else dir_dark
     select_rand_wallpaper(dir)
