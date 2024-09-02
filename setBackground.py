@@ -13,9 +13,7 @@ def list_images(dir):
 
 
 def set_wallpaper(image_path):
-    command = (
-        f"gsettings set org.gnome.desktop.background picture-uri file://{image_path}"
-    )
+    command = f"swaybg -i {image_path} -m fill &"
     subprocess.run(command, shell=True, check=True)
 
 
@@ -37,7 +35,9 @@ if __name__ == "__main__":
     if mode not in ["light", "dark"]:
         print("Invalid argument. args: [light|dark]")
         sys.exit(1)
-    dir_light = "/home/alireza/Downloads/background/wallpapers/light"
-    dir_dark = "/home/alireza/Downloads/background/wallpapers/dark"
+
+    home_dir = os.path.expanduser("~")
+    dir_light = os.path.join(home_dir, "Downloads/WallPaper/wallpapers/light")
+    dir_dark = os.path.join(home_dir, "Downloads/WallPaper/wallpapers/dark")
     dir = dir_light if mode == "light" else dir_dark
     select_rand_wallpaper(dir)
