@@ -15,6 +15,11 @@ def list_images(dir):
 def set_wallpaper(image_path):
     command = f"swaybg -i {image_path} -m fill &"
     subprocess.run(command, shell=True, check=True)
+    
+    ags_wall = "/home/alireza/.config/ags/scripts/color_generation/switchwall.sh"
+    command = f"{ags_wall} {image_path} &> /dev/null &"
+    subprocess.run(command, shell=True, check=True)
+
 
 
 def select_rand_wallpaper(dir):
